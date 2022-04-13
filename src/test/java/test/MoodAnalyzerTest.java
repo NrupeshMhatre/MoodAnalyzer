@@ -17,6 +17,6 @@ public class MoodAnalyzerTest {
 	        MoodAnalyzerMain mo = new MoodAnalyzerMain();
 	        String mood = mo.analyMood("OutPut is a happy ");
 	        assertEquals(mood,"HAPPY");
-	}
+	    }
 }
 
