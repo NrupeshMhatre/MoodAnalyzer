@@ -8,14 +8,14 @@ import practice.MoodAnalyzerMain;
 public class MoodAnalyzerTest {
 	    @Test
 	    public void sadMood() {
-	        MoodAnalyzerMain mo = new MoodAnalyzerMain();
-	        String mood = mo.analyMood("Output is a sad ");
+	        MoodAnalyzerMain mo = new MoodAnalyzerMain("Output is a sad ");
+	        String mood = mo.analyMood();
 	        assertEquals(mood,"SAD");
 	    }
 	    @Test
 	    public void happyMood() {
-	        MoodAnalyzerMain mo = new MoodAnalyzerMain();
-	        String mood = mo.analyMood("OutPut is a happy ");
+	        MoodAnalyzerMain mo = new MoodAnalyzerMain("OutPut is a happy ");
+	        String mood = mo.analyMood();
 	        assertEquals(mood,"HAPPY");
 	    }
 }
