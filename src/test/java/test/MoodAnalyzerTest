@@ -1,1 +1,58 @@
+package test;
+import static org.junit.Assert.*;
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
 
+import practice.MoodAnalysisException;
+import practice.MoodAnalyzerMain;
+
+public class MoodAnalyzerTest {
+	
+	    @Test
+	    public void givenMessage_WhenSad_ShouldReturnSad(){
+	    	MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain("I am in Sad Mood");
+	        String mood = null;
+	        try {
+	            mood = moodAnalyzer.analyMood();
+	        }catch (MoodAnalysisException e){
+	            System.out.println(e);
+	        }
+	        assertEquals("Sad",mood);
+	    }
+
+	    @Test
+	    public void givenMessage_WhenHappy_ShouldReturnHappy(){
+	    	MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain("I am in Happy Mood");
+	        String mood = null;
+	        try{
+	            mood = moodAnalyzer.analyMood();
+	            assertEquals("Happy",mood);
+	        }catch (MoodAnalysisException e){
+	            System.out.println(e);
+	        }
+	    }
+
+	    @Test
+	    public void givenNullMood_ShouldReturnHappy() {
+	        String mood = null;
+	        MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain(null);
+	        try{
+	            mood = moodAnalyzer.analyMood();
+	            assertEquals("Happy",mood);
+	        }catch (MoodAnalysisException e){
+	            System.out.println(e);
+	        }
+	    }
+
+	    @Test
+	    public void givenEmptyMood_ShouldReturnHappy(){
+	        String mood = null;
+	        MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain();
+	        try{
+	            mood = moodAnalyzer.analyMood();
+	            assertEquals("Happy",mood);
+	        }catch (MoodAnalysisException e){
+	            System.out.println(e);
+	        }
+	    }
+	}
