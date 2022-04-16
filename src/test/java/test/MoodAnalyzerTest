@@ -9,7 +9,7 @@ import practice.MoodAnalyzerMain;
 public class MoodAnalyzerTest {
 	
 	    @Test
-	    public void givenMessage_WhenSad_ShouldReturnSad(){
+	    public void sadMood(){
 	    	MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain("I am in Sad Mood");
 	        String mood = null;
 	        try {
@@ -17,23 +17,23 @@ public class MoodAnalyzerTest {
 	        }catch (MoodAnalysisException e){
 	            System.out.println(e);
 	        }
-	        assertEquals("Sad",mood);
+	        assertEquals("SAD",mood);
 	    }
 
 	    @Test
-	    public void givenMessage_WhenHappy_ShouldReturnHappy(){
+	    public void happyMood(){
 	    	MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain("I am in Happy Mood");
 	        String mood = null;
 	        try{
 	            mood = moodAnalyzer.analyMood();
-	            assertEquals("Happy",mood);
+	            assertEquals("HAPPY",mood);
 	        }catch (MoodAnalysisException e){
 	            System.out.println(e);
 	        }
 	    }
 
 	    @Test
-	    public void givenNullMood_ShouldReturnHappy() {
+	    public void returnHappy() {
 	        String mood = null;
 	        MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain(null);
 	        try{
@@ -45,7 +45,7 @@ public class MoodAnalyzerTest {
 	    }
 
 	    @Test
-	    public void givenEmptyMood_ShouldReturnHappy(){
+	    public void givenEmptyMood(){
 	        String mood = null;
 	        MoodAnalyzerMain moodAnalyzer = new MoodAnalyzerMain();
 	        try{
