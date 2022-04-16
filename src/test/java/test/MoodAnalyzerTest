@@ -16,8 +16,9 @@ public class MoodAnalyzerTest {
 	            mood = moodAnalyzer.analyMood();
 	        }catch (MoodAnalysisException e){
 	            System.out.println(e);
+		    assertEquals("SAD",mood);
 	        }
-	        assertEquals("SAD",mood);
+	        
 	    }
 
 	    @Test
